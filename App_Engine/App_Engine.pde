@@ -12,7 +12,7 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 String path = new File("").getAbsolutePath(); //Exported Program
-String directory = "C:/Users//Documents/GitHub/App-Engine-"; //Not Exported
+String directory = "C:/Users/AY/Documents/GitHub/App-Engine-"; //Not Exported
 //Reminder: \n is a character escape, so pathway must have forward slashes
 //
 
@@ -27,7 +27,7 @@ void setup() {
   File[] FileListAnyDirectory = anyDirectory.listFiles();
   printArray(FileListAnyDirectory);
   println("Items in FileList:", FileListAnyDirectory.length);
-  int i = 0; //song index
+  int i = 0; //songs index
   for (File file : FileListAnyDirectory) {
     if ( file.isFile() ) {
       if ( file.toString().endsWith(".mp3") ) {
