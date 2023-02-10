@@ -1,4 +1,4 @@
-/* CAUTION
+/* CAUTION Sandbox
  This code will cause the array songs to be null sometimes.
  This must be error checked
  */
@@ -12,14 +12,16 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 String path = new File("").getAbsolutePath(); //Exported Program
-String directory = "C:/Users/AY/Documents/GitHub/App-Engine-"; //Not Exported
+//CAUTION: GitHub must be linked to the C-Drive instead of FS ... This might need a lesson
+String directory = "C:/Users/A   .   Y/Documents/GitHub/App-Engine-/App_Engine"; //Not Exported
 //Reminder: \n is a character escape, so pathway must have forward slashes
 //
-
+Minim minim; //creates an object to access all functions
+AudioPlayer[] songs = new AudioPlayer[16]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 //
 void setup() {
   //
-  
+  minim = new Minim (this); //load from data directory, loadFile should also load from project folder, like loadImage
   //
   File anyDirectory = new File(path); //Used when exported
   println ("Exported Directory", anyDirectory);
@@ -32,16 +34,15 @@ void setup() {
     if ( file.isFile() ) {
       if ( file.toString().endsWith(".mp3") ) {
         println("Any Directory is working");
-        //songs[i] = minim.loadFile( file.getName() );
+        songs[i] = minim.loadFile( file.getName() );
         i = i + 1;
       }
     }
   }
   //
   //When Prototyping, songs is not loaded from anyDirectory
-  /*
   File[] FileListGitHubDir = githubDirectory.listFiles();
-  if (songs[0] == null) {
+  if ( songs[0] == null ) {
     printArray(FileListGitHubDir);
     for ( File file : FileListGitHubDir ) {
       if ( file.isFile() ) {
@@ -52,9 +53,8 @@ void setup() {
         }
       }
     }
-  } //Catch when NULL, not exported
-  */
-  //songs[0].play(); //Change the index manually
+  } //Catch when Pathway NULL, not exported
+  songs[0].loop(0); //Change the index manually
 }//End setup
 //
 void draw() {
