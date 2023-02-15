@@ -2,7 +2,9 @@
 //
 void setup() {
   //Landscape (portrait, square)
-  size(700, 400); //width, height
+  size(1000, 1000); //width, height
+  size(1000, 1000);
+triangle(120, 120, 232, 800, 344, 3);
   //fullScreen(); //displayWidth, displayHeight
   //Population, visual data
   float musicButtonDrawX = width * 1/2;
