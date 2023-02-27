@@ -1,6 +1,7 @@
 # App-Engine-
 Muisc player 2
 TO DO LIST
+
 [] Case Study: layout, developer-rectangles, ratios
  Pathway and Directory Reading of file names
 Drawing 2D Music Buttons: all buttons happen together
@@ -45,6 +46,7 @@ pause(index)
 rewind(index)
 index - 1
 Next Song
+
 play(index)
 Error, Array Index out of Bounds: 0 = array.length()-1
 if ( index + 1 >= array.length ) { index = 0; }
