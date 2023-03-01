@@ -7,10 +7,14 @@ float ffX1, ffY1, ffX2, ffY2, ffX3, ffY3, ffX4, ffY4, ffX5, ffY5, ffX6, ffY6;
 float rX1, rY1, rX2, rY2, rX3, rY3, rX4, rY4, rX5, rY5, rX6, rY6;
 float skipX1, skipY1, skipX2, skipY2, skipX3, skipY3, skipX4, skipY4;
 float backX1, backY1, backX2, backY2, backX3, backY3, backX4, backY4;
-color resetcolorNightMode=#FFFF48, black=#E020D4; //Night Mode Friendly
+float loopX1, loopY1, loopWidth, loopHeight, loopX2, loopY2, loopWidth2, loopHeight2, loopX3, loopY3, loopX4, loopY4, loopX5, loopY5;
+float muteX1, muteY1, muteX2, muteY2, muteX3, muteY3, muteX4, muteY4, muteX5, muteWidth, muteHeight;
+color resetcolorNightMode=#FFFF48, red=#FF0000, black=#000000; //Night Mode Friendly
 color resetcolorDayMode=#FFFFFF; //Not Night Mode Friendly
 //
 void drawMusicButtons() {
+  stroke(red) ;
+  strokeWeight(7);
   drawPauseButton();
   drawStopButton();
   drawPlayButton ();
@@ -18,6 +22,8 @@ void drawMusicButtons() {
   drawRButton();
   drawSkipButton();
   drawBackButton();
+  drawLoopButton() ;
+  drawMuteButton();
 }//End drawMusicButtons() 
 //
 void drawPauseButton() {
@@ -48,8 +54,8 @@ void drawFFButton() {
 //
 void drawRButton() {
    fill(black);
-   triangle( rX4 , rY5, rX3, rY5, rX6, rY5) ;
-   triangle( rX4, rY5, rX6, rY2, rX3, rY3) ;
+   triangle( rX4 , rY4, rX5, rY5, rX6, rY6) ;
+   triangle( rX1, rY1, rX2, rY2, rX3, rY3) ;
    fill(resetcolorDayMode) ; //Change this to ternary
 }//End drawReverseButton()
 //
@@ -59,11 +65,30 @@ void drawSkipButton() {
   rect (skipX4, skipY4, pauseWidth, pauseHeight);
   fill(resetcolorDayMode) ; //Change this to ternary
 }//End drawSkipButton()
+//
 void drawBackButton() {
   fill(black);
-  triangle (backX1, backY1, backX1, backY2, backX3, backY3);
+  triangle (backX1, backY1, backX2, backY2, backX3, backY3);
   rect (backX4, backY4, -pauseWidth, pauseHeight);
   fill(resetcolorDayMode) ; //Change this to ternary
 }//End drawBackButton()
-//  
+// 
+void drawLoopButton() {
+  fill(black);
+  ellipse ( loopX1, loopY1, loopWidth, loopHeight);
+  fill(resetcolorDayMode) ; //Change this to ternary
+  ellipse ( loopX2, loopY2, loopWidth2, loopHeight2);
+  fill(black);
+  triangle ( loopX3, loopY3, loopX4, loopY4, loopX5, loopY5);
+  fill(resetcolorDayMode) ; //Change this to ternary
+}//End drawLoopButton()
+//
+void drawMuteButton() {
+  fill(black);
+  triangle (muteX1, muteY1, muteX2, muteY2, muteX3, muteY3);
+  rect (muteX4, muteY4, muteWidth, muteHeight);
+  line ( rX5, muteY1, muteX5, muteY3);
+  line ( muteX5, muteY1, rX5, muteY3);
+  fill(resetcolorDayMode) ; //Change this to ternary
+}//End drawMuteButton()
 //End Music Player Buttons
