@@ -7,12 +7,14 @@ void setupMusic() {
   minim = new Minim (this); //load from data directory, loadFile should also load from project folder, like loadImage
   //
   //Set the Directory or Pathway to the Music
-  //Pathway: data / Music or Sound Effect Files 
+  //Pathway: data / Music or Sound Effct Files
   //
   //Reminder: finish OS_Level Code to auto read pathway and files (See Operating System)
   //
-  songs[] = minim.loadfile(path + muiscFile );
-  soundEffect[] = minim.loadFile( path + soundEffectFile );
+  concatenationOfMusicFiles();
+  songs[] = minim.loadFile( path + musicFile );
+  soundEffects[] = minim.loadFile( path + soundEffectFile );
+  //
 } //End setupMusic
 //
 void drawMusic() {}//End drawMusic
@@ -21,8 +23,9 @@ void keyPressedMusic() {}//End keyPressedMusic
 //
 void mousePressedMusic() {}//End mousePressedMusic
 //
-void concatenation() {
-   path ="data/"
-   grove = "groove
-}//End concatenation 
+void concatenationOfMusicFiles() {
+  path = "data/";
+  grove = "groove.mp3";
+}//End concatenation
+//
 //End Music SubProgram

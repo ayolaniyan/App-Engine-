@@ -2,6 +2,10 @@
  Also see Music SubProgram
  */
 //Global Variables
+String path = new File("").getAbsolutePath(); //Exported Program
+//CAUTION: GitHub must be linked to the C-Drive instead of FS ... This might need a lesson
+String directory = "C:/Users/mmercer/Documents/GitHub/Sandbox-App-Engine-Reivew-P3/App_Engine"; //Not Exported
+//Reminder: \n is a character escape, so pathway must have forward slashes
 //
 void setupOS_Level() {
   File anyDirectory = new File(path); //Used when exported
