@@ -67,7 +67,7 @@ void keyPressedMusic() {
   if ( key == '1' ) {
     //Finish Playing current song, then replay once
     delay( songs[currentSong].length() - songs[currentSong].position() );
-    //ERROR: delay stops all player functions, computer doesn't recognize if 
+    //ERROR: delay stops all player functions, computer doesn't recognize if
     //       song is playing
     songs[currentSong].loop(0);
   } //End Single Loop
@@ -76,17 +76,37 @@ void keyPressedMusic() {
   if ( key <= '9' && key != '1' ) {
     //Finish Playing current song, then replay once
     delay( songs[currentSong].length() - songs[currentSong].position() );
-    //ERROR: delay stops all player functions, computer doesn't recognize if 
+    //ERROR: delay stops all player functions, computer doesn't recognize if
     //       song is playing
     songs[currentSong].loop(-1); //parameter is empty or -1
   } //End Single Loop
   //
   //Stop
-  if () {}//End Stop
-  if ( songs[currentSong].isPlaying() ) { .pause(); .rewind(); } else { .rewind(); }
+  if ( key == 's' || key == 'S' ) { //STOP Button
+    /*Note: possible smarter STOP Buttons
+     - include soft "PAUSE" for first 15 seconds of STOP
+     - include auto previous & next track if STOP at beginning or end of file
+     */
+    if ( songs[currentSong].isPlaying() ) {
+      songs[currentSong].pause();
+      songs[currentSong].rewind();
+    } else {
+      songs[currentSong].rewind();
+    }
+  }//End Stop
   //
   //Play-Pause
-  
+  if ( key == 'p' || key == 'P' ) { //Play-Pause Button
+    if ( songs[currentSong].isPlaying() ) {
+      songs[currentSong].pause();
+    } else if (songs[currentSong].position() >= songs[currentSong].length()*4/5) {
+      // Student to Finish
+      // .pause(), .rewind(), then cue next song
+      //CAUTION: without code, this conditional will not do anything
+    } else {
+      songs[currentSong].play(); //no auto rewind like loop()
+    }
+  } //End Play-Pause
   //
 }//End keyPressedMusic
 //
