@@ -2,7 +2,7 @@
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 AudioPlayer[] soundEffects = new AudioPlayer[2];
-String pathway, grove, newsroom, string, door;
+String pathway, letgo, eureka, beat, door;
 int currentSong=0;
 Boolean autoPlayOn=false;
 //
@@ -16,9 +16,9 @@ void setupMusic() {
   //Reminder: finish OS_Level Code to auto read pathway and files (See Operating System)
   //
   concatenationOfMusicFiles();
-  songs[0] = minim.loadFile( pathway + grove );
-  songs[1] = minim.loadFile( pathway + newsroom );
-  soundEffects[0] = minim.loadFile( pathway + string );
+  songs[0] = minim.loadFile( pathway + letgo );
+  songs[1] = minim.loadFile( pathway + eureka  );
+  soundEffects[0] = minim.loadFile( pathway + beat  );
   soundEffects[1] = minim.loadFile( pathway + door );
   //
 } //End setupMusic
@@ -28,7 +28,6 @@ void drawMusic() {
   print("Current Sond Position:", songs[currentSong].position() );
   println("\tEnd of Song:", songs[currentSong].length() );
   //
-  autoPlayMusic();
   //
 }//End drawMusic
 //
@@ -38,6 +37,7 @@ void keyPressedMusic() {
   if ( key == 'm' || key == 'M' ) {//Mute Button, not PAUSE, only affect speakers
     //ERROR: this MUTE Button only works when song is playing
     //ERROR Fix: unmute or rewind when song is not playing (i.e. unmute next song)
+    if ( key=='l' || key== 'L'  ) //Parameter is number of repeats
     if ( songs[currentSong].isMuted() ) {
       songs[currentSong].unmute();
     } else if ( songs[currentSong].position() >= songs[currentSong].length()*4/5 ) {
@@ -131,20 +131,10 @@ void mousePressedMusic() {
 //
 void concatenationOfMusicFiles() {
   pathway = "data/";
-  grove = "Central Cee Let Go.mp3";
-  newsroom = "Eureka.mp3";
-  string = "Beat_Your_Competition.mp3";
+  letgo = "Central Cee Let Go.mp3";
+  eureka = "Eureka.mp3";
+  beat = "Beat_Your_Competition.mp3";
   door = "Wood_Door_Open_and_Close_Series.mp3";
 }//End concatenation
-//
-void autoPlayMusic() {
-    /* Autoplay Section, see Music Subprogram
-  if ( autoPlayOn ) {//Auto Play
-    //if () {} if else () {} else {}
-    //Ex#1: .position() >= .length(), then rewind(), currentSong+=1, .play()
-    //Ex#2: .isPlaying(), when false rewind(), currentSong+=1, .play()
-  } //End Autoplay
-  */
-}//End Auto Play Music
 //
 //End Music SubProgram
