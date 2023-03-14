@@ -132,8 +132,8 @@ void mousePressedMusic() {
 void concatenationOfMusicFiles() {
   pathway = "data/";
   grove = "Central Cee Let Go.mp3";
-  newsroom = "Newsroom.mp3";
-  string = "The_Simplest_Sting.mp3";
+  newsroom = "Eureka.mp3";
+  string = "Beat_Your_Competition.mp3";
   door = "Wood_Door_Open_and_Close_Series.mp3";
 }//End concatenation
 //
