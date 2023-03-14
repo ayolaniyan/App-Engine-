@@ -9,12 +9,12 @@ float skipX1, skipY1, skipX2, skipY2, skipX3, skipY3, skipX4, skipY4;
 float backX1, backY1, backX2, backY2, backX3, backY3, backX4, backY4;
 float loopX1, loopY1, loopWidth, loopHeight, loopX2, loopY2, loopWidth2, loopHeight2, loopX3, loopY3, loopX4, loopY4, loopX5, loopY5;
 float muteX1, muteY1, muteX2, muteY2, muteX3, muteY3, muteX4, muteY4, muteX5, muteWidth, muteHeight;
-color resetcolorNightMode=#FFFF48, red=#EDEDED, black=#1C0808; //Night Mode Friendly
+color resetcolorNightMode=#FFFF48, white=#EDEDED, black=#1C0808; //Night Mode Friendly
 color resetcolorDayMode=#FFFFFF; //Not Night Mode Friendly
 //
 void drawMusicButtons() {
-  stroke(red) ;
-  strokeWeight(7);
+  stroke(white) ;
+  strokeWeight(6);
   drawPauseButton();
   drawStopButton();
   drawPlayButton ();

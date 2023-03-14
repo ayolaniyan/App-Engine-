@@ -4,6 +4,7 @@ AudioPlayer[] songs = new AudioPlayer[2]; //creates "Play List" variable holding
 AudioPlayer[] soundEffects = new AudioPlayer[2];
 String pathway, grove, newsroom, string, door;
 int currentSong=0;
+Boolean autoPlayOn=false;
 //
 void setupMusic() {
   //
@@ -23,6 +24,12 @@ void setupMusic() {
 } //End setupMusic
 //
 void drawMusic() {
+  //Debugging in CONSOLE
+  print("Current Sond Position:", songs[currentSong].position() );
+  println("\tEnd of Song:", songs[currentSong].length() );
+  //
+  autoPlayMusic();
+  //
 }//End drawMusic
 //
 void keyPressedMusic() {
@@ -108,6 +115,15 @@ void keyPressedMusic() {
     }
   } //End Play-Pause
   //
+  //Autoplay Button
+  if ( key == 'o' || key == 'O'  ) {
+    if ( autoPlayOn == false ) {
+      autoPlayOn = true;
+    } else {
+      autoPlayOn = false;
+    }
+  }//End Autoplay
+  //
 }//End keyPressedMusic
 //
 void mousePressedMusic() {
@@ -120,5 +136,15 @@ void concatenationOfMusicFiles() {
   string = "The_Simplest_Sting.mp3";
   door = "Wood_Door_Open_and_Close_Series.mp3";
 }//End concatenation
+//
+void autoPlayMusic() {
+    /* Autoplay Section, see Music Subprogram
+  if ( autoPlayOn ) {//Auto Play
+    //if () {} if else () {} else {}
+    //Ex#1: .position() >= .length(), then rewind(), currentSong+=1, .play()
+    //Ex#2: .isPlaying(), when false rewind(), currentSong+=1, .play()
+  } //End Autoplay
+  */
+}//End Auto Play Music
 //
 //End Music SubProgram

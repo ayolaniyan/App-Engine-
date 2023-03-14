@@ -1,10 +1,7 @@
 void setupPopulation() {
-  //
-    
-  
   float musicButtonDrawX = width * 25/50;
   float musicButtonDrawY = height * 1/2;
-  pauseScaleWidth = 1.0/30.0; //used to change x-size
+  pauseScaleWidth = 1.0/35.0; //used to change x-size
   pauseScaleHeight = 1.0/5.5; //used to change y-axis
   //println(pauseScaleWidth);
   //println(pauseScaleHeight);
