@@ -2,7 +2,7 @@
 //
 void setup() {
   //Landscape (portrait, square)
-  size(1000, 500); //width, height
+  size(600, 300); //width, height
   //fullScreen(); //displayWidth, displayHeight
   //Population, visual data
   setupPopulation() ;

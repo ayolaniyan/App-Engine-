@@ -22,7 +22,7 @@ void drawMusicButtons() {
   drawRButton();
   drawSkipButton();
   drawBackButton();
-  drawLoopButton() ;
+
 }//End drawMusicButtons() 
 //
 void drawPauseButton() {
@@ -72,14 +72,5 @@ void drawBackButton() {
   fill(resetcolorDayMode) ; //Change this to ternary
 }//End drawBackButton()
 // 
-void drawLoopButton() {
-  fill(black);
-  ellipse ( loopX1, loopY1, loopWidth, loopHeight);
-  fill(resetcolorDayMode) ; //Change this to ternary
-  ellipse ( loopX2, loopY2, loopWidth2, loopHeight2);
-  fill(black);
-  triangle ( loopX3, loopY3, loopX4, loopY4, loopX5, loopY5);
-  fill(resetcolorDayMode) ; //Change this to ternary
-}//End drawLoopButton()
 //
 //End Music Player Buttons
